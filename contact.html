@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Glam by Ivy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body class="page-fade">
+
+    <!-- Nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="index.html" class="site-logo">Glam by Ivy</a>
+        <ul class="site-links">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="site-actions">
+          <a href="cart.html" class="cart-icon" aria-label="Cart">
+            <ion-icon name="bag-outline"></ion-icon>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-nav">
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="contact-hero">
+      <h1 class="contact-hero__title">Get in Touch</h1>
+      <p class="contact-hero__sub">We'd love to hear from you. Reach us by form, phone, or WhatsApp.</p>
+    </div>
+
+    <!-- Content -->
+    <div class="contact-layout">
+
+      <!-- Form -->
+      <div>
+        <h2 class="contact-form__title">Send us a message</h2>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="c-name">Your Name *</label>
+            <input type="text" id="c-name" name="name" required placeholder="Jane Wanjiru" />
+          </div>
+          <div class="form-field">
+            <label for="c-email">Email Address *</label>
+            <input type="email" id="c-email" name="email" required placeholder="jane@email.com" />
+          </div>
+          <div class="form-field">
+            <label for="c-subject">Subject</label>
+            <input type="text" id="c-subject" name="subject" placeholder="e.g. Order enquiry, Wig care advice" />
+          </div>
+          <div class="form-field">
+            <label for="c-message">Message *</label>
+            <textarea id="c-message" name="message" required placeholder="Tell us how we can help…"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+          <div class="form-success" id="form-success">
+            Thank you! We'll get back to you within 1 business day.
+          </div>
+        </form>
+      </div>
+
+      <!-- Info cards -->
+      <div class="contact-info">
+        <h2 class="contact-info__title">Contact Details</h2>
+
+        <a href="https://wa.me/254726316981" class="contact-card whatsapp-card" target="_blank" rel="noopener">
+          <ion-icon name="logo-whatsapp" class="contact-card__icon"></ion-icon>
+          <div>
+            <p class="contact-card__label">WhatsApp</p>
+            <p class="contact-card__value">+254 726 316981<br /><small>Fastest way to reach us</small></p>
+          </div>
+        </a>
+
+        <div class="contact-card">
+          <ion-icon name="call-outline" class="contact-card__icon"></ion-icon>
+          <div>
+            <p class="contact-card__label">Phone</p>
+            <p class="contact-card__value"><a href="tel:+254726316981">+254 726 316981</a></p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <ion-icon name="mail-outline" class="contact-card__icon"></ion-icon>
+          <div>
+            <p class="contact-card__label">Email</p>
+            <p class="contact-card__value"><a href="mailto:sales@glambyivy.com">sales@glambyivy.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <ion-icon name="location-outline" class="contact-card__icon"></ion-icon>
+          <div>
+            <p class="contact-card__label">Visit Us</p>
+            <p class="contact-card__value">HH Towers, 2nd Floor<br />Moi Avenue, Nairobi, Kenya</p>
+          </div>
+        </div>
+
+        <div class="contact-socials">
+          <span class="contact-socials__label">Follow Us</span>
+          <div class="social-grid">
+            <a href="https://instagram.com/glam_by_ivy" class="social-chip" target="_blank" rel="noopener">
+              <ion-icon name="logo-instagram"></ion-icon> @glam_by_ivy
+            </a>
+            <a href="https://tiktok.com/@glam_by_ivy254" class="social-chip" target="_blank" rel="noopener">
+              <ion-icon name="logo-tiktok"></ion-icon> @glam_by_ivy254
+            </a>
+            <a href="https://facebook.com/Glambyivyheadbands" class="social-chip" target="_blank" rel="noopener">
+              <ion-icon name="logo-facebook"></ion-icon> Glambyivyheadbands
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo">Glam by Ivy</p>
+          <p class="footer-tagline">By Women, For Women</p>
+          <p class="footer-desc">Premium wigs, extensions &amp; hair accessories — crafted for the modern Kenyan woman.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="shop.html?cat=human-wigs">Human Wigs</a>
+            <a href="shop.html?cat=semi-human-wigs">Semi-Human Wigs</a>
+            <a href="shop.html?cat=braid-wigs">Braid Wigs</a>
+            <a href="shop.html?cat=extensions">Extensions</a>
+          </div>
+          <div class="footer-col">
+            <h4>Info</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://instagram.com/glam_by_ivy" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@glam_by_ivy254" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://facebook.com/Glambyivyheadbands" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Glam by Ivy &middot; HH Towers, Moi Avenue, Nairobi</p>
+        <p><a href="mailto:sales@glambyivy.com">sales@glambyivy.com</a></p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/254726316981" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
+
+    <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/lenis-init.js"></script>
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        /* TODO: wire up to a form backend (Netlify Forms, Formspree, etc.) */
+        document.getElementById('form-success').style.display = 'block';
+        e.target.reset();
+      });
+    </script>
+  </body>
+</html>

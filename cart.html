@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart — Glam by Ivy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body class="page-fade">
+
+    <!-- Nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="index.html" class="site-logo">Glam by Ivy</a>
+        <ul class="site-links">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-actions">
+          <a href="cart.html" class="cart-icon" aria-label="Cart">
+            <ion-icon name="bag-outline"></ion-icon>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-nav">
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Cart -->
+    <main class="cart-page">
+      <h1 class="cart-page__title">Your Bag</h1>
+      <span class="cart-page__count" id="cart-item-count"></span>
+
+      <div class="cart-layout" id="cart-layout">
+        <!-- Populated by inline script below -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo">Glam by Ivy</p>
+          <p class="footer-tagline">By Women, For Women</p>
+          <p class="footer-desc">Premium wigs, extensions &amp; hair accessories — crafted for the modern Kenyan woman.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="shop.html?cat=human-wigs">Human Wigs</a>
+            <a href="shop.html?cat=semi-human-wigs">Semi-Human Wigs</a>
+            <a href="shop.html?cat=braid-wigs">Braid Wigs</a>
+            <a href="shop.html?cat=extensions">Extensions</a>
+          </div>
+          <div class="footer-col">
+            <h4>Info</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://instagram.com/glam_by_ivy" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@glam_by_ivy254" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://facebook.com/Glambyivyheadbands" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Glam by Ivy &middot; HH Towers, Moi Avenue, Nairobi</p>
+        <p><a href="mailto:sales@glambyivy.com">sales@glambyivy.com</a></p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/254726316981" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
+
+    <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/lenis-init.js"></script>
+    <script>
+      function renderCartPage() {
+        var cart = getCart();
+        var layout = document.getElementById('cart-layout');
+        var countEl = document.getElementById('cart-item-count');
+
+        var totalItems = getCartCount();
+        if (countEl) countEl.textContent = totalItems + ' item' + (totalItems !== 1 ? 's' : '');
+
+        if (cart.length === 0) {
+          layout.innerHTML =
+            '<div class="cart-empty" style="grid-column:1/-1">' +
+              '<p>Your bag is empty.</p>' +
+              '<a href="shop.html" class="btn-primary">Continue Shopping</a>' +
+            '</div>';
+          return;
+        }
+
+        var itemsHTML = '<div class="cart-items">' +
+          cart.map(function(item) {
+            return '<div class="cart-item" data-id="' + item.id + '">' +
+              '<div class="cart-item__img"><a href="product.html?id=' + item.id + '"><img src="' + item.image + '" alt="' + item.name + '" /></a></div>' +
+              '<div class="cart-item__info">' +
+                '<span class="cart-item__cat">' + (item.categoryLabel || '') + '</span>' +
+                '<p class="cart-item__name">' + item.name + '</p>' +
+                '<p class="cart-item__price-unit">' + formatKES(item.price) + ' each</p>' +
+                '<div class="cart-item__controls">' +
+                  '<div class="qty-stepper">' +
+                    '<button class="qty-btn" onclick="stepQty(' + item.id + ',-1)" aria-label="Decrease"><ion-icon name="remove-outline"></ion-icon></button>' +
+                    '<span class="qty-display">' + item.qty + '</span>' +
+                    '<button class="qty-btn" onclick="stepQty(' + item.id + ',1)" aria-label="Increase"><ion-icon name="add-outline"></ion-icon></button>' +
+                  '</div>' +
+                  '<button class="btn-remove" onclick="deleteItem(' + item.id + ')">Remove</button>' +
+                '</div>' +
+              '</div>' +
+              '<span class="cart-item__line-total">' + formatKES(item.price * item.qty) + '</span>' +
+            '</div>';
+          }).join('') +
+          '</div>';
+
+        var total = getCartTotal();
+        var summaryHTML = '<aside class="cart-summary">' +
+          '<h2 class="cart-summary__title">Order Summary</h2>' +
+          '<div class="cart-summary__row"><span>Subtotal</span><span>' + formatKES(total) + '</span></div>' +
+          '<div class="cart-summary__row"><span>Delivery</span><span>Calculated at checkout</span></div>' +
+          '<div class="cart-summary__row total"><span>Total</span><span class="price">' + formatKES(total) + '</span></div>' +
+          '<p class="cart-summary__note">Delivery: 1–2 days Nairobi · 3–5 days countrywide via courier.</p>' +
+          '<a href="checkout.html" class="btn-primary">Proceed to Checkout</a>' +
+          '<a href="shop.html" class="btn-outline" style="margin-top:0.5rem">Continue Shopping</a>' +
+          '</aside>';
+
+        layout.innerHTML = itemsHTML + summaryHTML;
+      }
+
+      function stepQty(id, delta) {
+        var cart = getCart();
+        var item = cart.find(function(i) { return i.id === id; });
+        if (!item) return;
+        var newQty = item.qty + delta;
+        if (newQty <= 0) {
+          removeFromCart(id);
+        } else {
+          updateQty(id, newQty);
+        }
+        renderCartPage();
+      }
+
+      function deleteItem(id) {
+        removeFromCart(id);
+        renderCartPage();
+      }
+
+      document.addEventListener('DOMContentLoaded', renderCartPage);
+    </script>
+  </body>
+</html>

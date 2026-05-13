@@ -1,0 +1,198 @@
+/* ── About page ── */
+
+.about-hero {
+  background: var(--text);
+  color: var(--secondary);
+  padding: 6rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero__eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.about-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--secondary);
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.about-hero__tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(232, 213, 176, 0.5);
+}
+
+/* Story section */
+.about-story {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-story__img {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+
+.about-story__img img { width: 100%; height: 100%; object-fit: cover; }
+
+.about-story__content .section-label { margin-bottom: 1rem; }
+
+.about-story__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.about-story__body {
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.about-story__body p + p { margin-top: 1rem; }
+
+/* Values strip */
+.about-values {
+  background: var(--bg-2);
+  padding: 4rem 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-values__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.value-item__number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.value-item__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Location */
+.about-location {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-location__map {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--text-muted);
+}
+
+.about-location__map ion-icon { font-size: 2.5rem; color: var(--accent); }
+.about-location__map p { font-size: 0.8rem; letter-spacing: 0.06em; }
+
+.about-location__details .section-label { margin-bottom: 1.25rem; }
+
+.about-location__heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.contact-detail ion-icon {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.contact-detail p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.contact-detail a { color: var(--text-muted); transition: color var(--transition); }
+.contact-detail a:hover { color: var(--accent); }
+
+.social-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.75rem;
+  transition: all var(--transition);
+}
+
+.social-link ion-icon { font-size: 0.95rem; }
+.social-link:hover { border-color: var(--text); color: var(--text); }
+
+@media (max-width: 768px) {
+  .about-hero { padding: 4rem 1.5rem 3.5rem; }
+  .about-story { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.25rem; }
+  .about-values__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .about-location { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.25rem; }
+}

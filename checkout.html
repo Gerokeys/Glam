@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout — Glam by Ivy</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body class="page-fade">
+
+    <!-- Nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="index.html" class="site-logo">Glam by Ivy</a>
+        <ul class="site-links">
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-actions">
+          <a href="cart.html" class="cart-icon" aria-label="Cart">
+            <ion-icon name="bag-outline"></ion-icon>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-nav">
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div id="checkout-section">
+      <main class="checkout-page">
+        <h1 class="checkout-page__title">Checkout</h1>
+
+        <div class="checkout-layout">
+
+          <!-- Form -->
+          <div class="checkout-form-section">
+            <form id="checkout-form" novalidate>
+
+              <!-- Contact info -->
+              <div class="form-section">
+                <h2 class="form-section__title">Contact &amp; Delivery</h2>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="Jane Wanjiru" />
+                  </div>
+                  <div class="form-field">
+                    <label for="phone">Phone (M-Pesa) *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="0712 345 678" />
+                    <span class="field-hint">Used for M-Pesa STK push</span>
+                  </div>
+                </div>
+                <div class="form-grid full" style="margin-top:1rem">
+                  <div class="form-field">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="jane@email.com" />
+                  </div>
+                </div>
+                <div class="form-grid full" style="margin-top:1rem">
+                  <div class="form-field">
+                    <label for="address">Delivery Address *</label>
+                    <input type="text" id="address" name="address" required placeholder="e.g. Westlands, Nairobi" />
+                  </div>
+                </div>
+                <div class="form-grid full" style="margin-top:1rem">
+                  <div class="form-field">
+                    <label for="notes">Order Notes (optional)</label>
+                    <textarea id="notes" name="notes" placeholder="Any special instructions for your order…"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment -->
+              <div class="form-section">
+                <h2 class="form-section__title">Payment Method</h2>
+
+                <div class="payment-cards">
+                  <div class="payment-card" data-method="mpesa">
+                    <div class="payment-card__icon"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+                    <p class="payment-card__name">M-Pesa</p>
+                    <p class="payment-card__desc">STK push to your phone. Fast &amp; secure.</p>
+                  </div>
+                  <div class="payment-card" data-method="card">
+                    <div class="payment-card__icon"><ion-icon name="card-outline"></ion-icon></div>
+                    <p class="payment-card__name">Card (Pesapal)</p>
+                    <p class="payment-card__desc">Visa &amp; Mastercard via Pesapal secure checkout.</p>
+                  </div>
+                </div>
+
+                <div class="payment-fields-wrap">
+                  <!-- M-Pesa fields -->
+                  <div id="mpesa-fields" style="display:none">
+                    <span class="mpesa-logo">M-Pesa &mdash; STK Push</span>
+                    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7">
+                      After placing your order, you'll receive an M-Pesa prompt on your phone.
+                      Enter your PIN to complete the payment of the order total.
+                    </p>
+                  </div>
+                  <!-- Card / Pesapal fields -->
+                  <div id="card-fields" style="display:none">
+                    <span class="pesapal-logo">Pesapal &mdash; Secure Card Payment</span>
+                    <span class="sandbox-badge">Sandbox Mode</span>
+                    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7">
+                      You'll be redirected to Pesapal's secure payment page to enter your
+                      Visa or Mastercard details.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn-primary">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                Place Order
+              </button>
+            </form>
+          </div>
+
+          <!-- Order summary -->
+          <aside class="checkout-summary">
+            <h2 class="checkout-summary__title">Your Order</h2>
+            <div id="order-items"></div>
+            <div class="summary-row"><span>Subtotal</span><span id="order-subtotal"></span></div>
+            <div class="summary-row"><span>Delivery</span><span>TBD</span></div>
+            <div class="summary-row total"><span>Total</span><span class="price" id="order-total"></span></div>
+          </aside>
+
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo">Glam by Ivy</p>
+          <p class="footer-tagline">By Women, For Women</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="shop.html">All Products</a>
+            <a href="cart.html">My Bag</a>
+          </div>
+          <div class="footer-col">
+            <h4>Info</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://instagram.com/glam_by_ivy" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://wa.me/254726316981" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Glam by Ivy &middot; HH Towers, Moi Avenue, Nairobi</p>
+        <p><a href="mailto:sales@glambyivy.com">sales@glambyivy.com</a></p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/254726316981" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
+
+    <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/lenis-init.js"></script>
+    <script src="./js/checkout.js"></script>
+  </body>
+</html>

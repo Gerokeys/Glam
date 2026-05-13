@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glam by Ivy — By Women, For Women</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body class="is-landing">
+
+    <!-- ══════════════════════════════════════
+         LANDING SECTION — full-screen animation
+         ══════════════════════════════════════ -->
+    <section class="landing-section">
+
+      <!-- Image grid backdrop -->
+      <div class="container">
+        <div class="col c-1">
+          <div class="item"><img src="./assets/img1.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img2.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img3.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img4.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img5.jpg" alt="" /></div>
+        </div>
+        <div class="col c-2">
+          <div class="item"><img src="./assets/img6.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img7.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img8.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img9.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img10.jpg" alt="" /></div>
+        </div>
+        <div class="col c-3">
+          <div class="item"><img src="./assets/hero.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/hero.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/hero.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/hero.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/hero.jpg" alt="" /></div>
+        </div>
+        <div class="col c-4">
+          <div class="item"><img src="./assets/img1.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img3.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img5.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img7.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img9.jpg" alt="" /></div>
+        </div>
+        <div class="col c-5">
+          <div class="item"><img src="./assets/img11.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img13.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img2.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img4.jpg" alt="" /></div>
+          <div class="item"><img src="./assets/img6.jpg" alt="" /></div>
+        </div>
+      </div>
+
+      <!-- UI overlay -->
+      <div class="content">
+
+        <!-- ── Prominent Nav ── -->
+        <nav class="landing-nav">
+
+          <!-- Logo -->
+          <div class="landing-nav__logo">
+            <a href="index.html">Glam by Ivy</a>
+          </div>
+
+          <!-- Center links -->
+          <div class="landing-nav__center">
+            <div class="landing-nav__link"><a href="shop.html">Shop</a></div>
+            <div class="landing-nav__link"><a href="about.html">About</a></div>
+            <div class="landing-nav__link"><a href="contact.html">Contact</a></div>
+            <div class="landing-nav__link"><a href="faq.html">FAQ</a></div>
+          </div>
+
+          <!-- Right: cart + CTA -->
+          <div class="landing-nav__right">
+            <div class="landing-nav__cart-wrap">
+              <a href="cart.html" aria-label="Cart">
+                <ion-icon name="bag-outline"></ion-icon>
+                <span class="cart-count">0</span>
+              </a>
+            </div>
+            <div class="landing-nav__cta-wrap">
+              <a href="shop.html" class="nav-shop-btn shop-cta-link">Shop Now</a>
+            </div>
+          </div>
+
+        </nav>
+
+        <!-- Hero -->
+        <div class="hero">
+          <div class="icon"><ion-icon name="add-sharp"></ion-icon></div>
+          <div class="title">
+            <p>By Women, For Women</p>
+          </div>
+          <div class="icon-2"><ion-icon name="add-sharp"></ion-icon></div>
+        </div>
+
+        <!-- Footer: CTA label -->
+        <footer class="landing-footer">
+          <div class="slide-num">
+            <p><a href="shop.html" class="shop-cta-link">Shop the Collection &nbsp;&rarr;</a></p>
+          </div>
+        </footer>
+
+      </div><!-- /content -->
+
+      <!-- Scroll indicator -->
+      <a href="#featured" class="scroll-indicator" aria-label="Scroll to explore">
+        <span>Explore</span>
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </a>
+
+    </section><!-- /landing-section -->
+
+
+    <!-- ══════════════════════════════════════
+         FEATURED PRODUCTS
+         ══════════════════════════════════════ -->
+    <section class="featured-section" id="featured">
+      <div class="featured-section__inner">
+        <div class="section-header">
+          <div>
+            <span class="section-label">New In</span>
+            <h2 class="section-header__title">Featured Styles</h2>
+          </div>
+          <a href="shop.html" class="section-header__link">View all &rarr;</a>
+        </div>
+        <div class="featured-grid" id="featured-grid">
+          <!-- Loaded by JS from data/products.json -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SHOP BY CATEGORY
+         ══════════════════════════════════════ -->
+    <section class="category-section">
+      <div class="category-section__inner">
+        <div class="section-header">
+          <div>
+            <span class="section-label">Browse</span>
+            <h2 class="section-header__title">Shop by Category</h2>
+          </div>
+        </div>
+        <div class="category-grid">
+
+          <a href="shop.html?cat=human-wigs" class="category-card">
+            <img class="category-card__img" src="./assets/cat-human-wigs.jpg" alt="Human Wigs" loading="lazy" />
+            <div class="category-card__overlay">
+              <span class="category-card__label">Premium</span>
+              <span class="category-card__title">Human Wigs</span>
+              <span class="category-card__cta">Shop Now &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?cat=semi-human-wigs" class="category-card">
+            <img class="category-card__img" src="./assets/cat-semi-human.jpg" alt="Semi-Human Wigs" loading="lazy" />
+            <div class="category-card__overlay">
+              <span class="category-card__label">Affordable</span>
+              <span class="category-card__title">Semi-Human Wigs</span>
+              <span class="category-card__cta">Shop Now &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?cat=braid-wigs" class="category-card">
+            <img class="category-card__img" src="./assets/cat-braids.jpg" alt="Braid Wigs" loading="lazy" />
+            <div class="category-card__overlay">
+              <span class="category-card__label">Protective</span>
+              <span class="category-card__title">Braid Wigs</span>
+              <span class="category-card__cta">Shop Now &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?cat=extensions" class="category-card">
+            <img class="category-card__img" src="./assets/cat-extensions.jpg" alt="Extensions" loading="lazy" />
+            <div class="category-card__overlay">
+              <span class="category-card__label">Add Length</span>
+              <span class="category-card__title">Extensions</span>
+              <span class="category-card__cta">Shop Now &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?cat=headbands" class="category-card">
+            <img class="category-card__img" src="./assets/cat-headbands.jpg" alt="Headbands &amp; Turbans" loading="lazy" />
+            <div class="category-card__overlay">
+              <span class="category-card__label">Accessories</span>
+              <span class="category-card__title">Headbands &amp; Turbans</span>
+              <span class="category-card__cta">Shop Now &rarr;</span>
+            </div>
+          </a>
+
+          <a href="shop.html?cat=synthetic-wigs" class="category-card">
+            <img class="category-card__img" src="./assets/cat-synthetic.jpg" alt="Synthetic Wigs" loading="lazy" />
+            <div class="category-card__overlay">
+              <span class="category-card__label">Bold &amp; Bright</span>
+              <span class="category-card__title">Synthetic Wigs</span>
+              <span class="category-card__cta">Shop Now &rarr;</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         TRUST STRIP
+         ══════════════════════════════════════ -->
+    <section class="trust-strip">
+      <div class="trust-strip__inner">
+
+        <div class="trust-item reveal-on-scroll">
+          <ion-icon name="ribbon-outline" class="trust-item__icon"></ion-icon>
+          <p class="trust-item__title">100% Human Hair</p>
+          <p class="trust-item__desc">Genuine human hair wigs sourced and quality-checked in-house before every delivery.</p>
+        </div>
+
+        <div class="trust-item reveal-on-scroll">
+          <ion-icon name="bicycle-outline" class="trust-item__icon"></ion-icon>
+          <p class="trust-item__title">Same-Day Delivery</p>
+          <p class="trust-item__desc">Orders placed before 1 PM reach you the same day within Nairobi. Nationwide shipping available.</p>
+        </div>
+
+        <div class="trust-item reveal-on-scroll">
+          <ion-icon name="phone-portrait-outline" class="trust-item__icon"></ion-icon>
+          <p class="trust-item__title">Pay via M-Pesa</p>
+          <p class="trust-item__desc">Secure checkout with M-Pesa STK push or card payment via Pesapal.</p>
+        </div>
+
+        <div class="trust-item reveal-on-scroll">
+          <ion-icon name="storefront-outline" class="trust-item__icon"></ion-icon>
+          <p class="trust-item__title">100+ Styles In Store</p>
+          <p class="trust-item__desc">Visit us at HH Towers, Moi Avenue, Nairobi. Try before you buy, or order online.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         WHATSAPP CTA
+         ══════════════════════════════════════ -->
+    <section class="homepage-wa-cta">
+      <span class="homepage-wa-cta__eyebrow">Personalised Help</span>
+      <h2 class="homepage-wa-cta__title">Not sure what to get?</h2>
+      <p class="homepage-wa-cta__sub">Our team is available every day to help you find your perfect wig — share a photo, describe your look, or ask anything.</p>
+      <a href="https://wa.me/254726316981" class="btn-primary" target="_blank" rel="noopener">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+        Chat on WhatsApp
+      </a>
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SITE FOOTER
+         ══════════════════════════════════════ -->
+    <footer class="site-footer" style="margin-top: 0">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <p class="footer-logo">Glam by Ivy</p>
+          <p class="footer-tagline">By Women, For Women</p>
+          <p class="footer-desc">Premium wigs, extensions &amp; hair accessories — crafted for the modern Kenyan woman.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <a href="shop.html?cat=human-wigs">Human Wigs</a>
+            <a href="shop.html?cat=semi-human-wigs">Semi-Human Wigs</a>
+            <a href="shop.html?cat=braid-wigs">Braid Wigs</a>
+            <a href="shop.html?cat=extensions">Extensions</a>
+          </div>
+          <div class="footer-col">
+            <h4>Info</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="https://instagram.com/glam_by_ivy" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@glam_by_ivy254" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://facebook.com/Glambyivyheadbands" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Glam by Ivy &middot; HH Towers, Moi Avenue, Nairobi</p>
+        <p><a href="mailto:sales@glambyivy.com">sales@glambyivy.com</a></p>
+      </div>
+    </footer>
+
+    <!-- WhatsApp float -->
+    <a href="https://wa.me/254726316981" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </a>
+
+    <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./js/cart.js"></script>
+    <script>
+      /* ── GSAP intro animation ── */
+      var tl = gsap.timeline({ delay: 0 });
+
+      tl.to(".col", {
+        top: "0",
+        duration: 3,
+        ease: "power4.inOut"
+      });
+
+      tl.to(".c-1 .item", { top: "0", stagger:  0.25, duration: 3, ease: "power4.inOut" }, "-=2");
+      tl.to(".c-2 .item", { top: "0", stagger: -0.25, duration: 3, ease: "power4.inOut" }, "-=4");
+      tl.to(".c-3 .item", { top: "0", stagger:  0.25, duration: 3, ease: "power4.inOut" }, "-=4");
+      tl.to(".c-4 .item", { top: "0", stagger: -0.25, duration: 3, ease: "power4.inOut" }, "-=4");
+      tl.to(".c-5 .item", { top: "0", stagger:  0.25, duration: 3, ease: "power4.inOut" }, "-=4");
+
+      tl.to(".container", {
+        scale: 6,
+        duration: 4,
+        ease: "power4.inOut"
+      }, "-=2");
+
+      tl.to(
+        ".landing-nav__logo a, .landing-nav__link a, .landing-nav__cart-wrap a, .landing-nav__cta-wrap a, .slide-num p",
+        { top: 0, stagger: 0.07, duration: 1, ease: "power3.out" },
+        "-=1.5"
+      );
+
+      tl.to(".icon ion-icon, .icon-2 ion-icon", {
+        scale: 1,
+        stagger: 0.05,
+        ease: "power3.out"
+      }, "-=1");
+
+      tl.to(".scroll-indicator", {
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out"
+      }, "-=1.2");
+
+      /* ── Smooth exit to shop ── */
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".shop-cta-link").forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            gsap.to(".content", {
+              opacity: 0,
+              duration: 0.35,
+              ease: "power2.in",
+              onComplete: function () { window.location.href = "shop.html"; }
+            });
+          });
+        });
+      });
+
+      /* ── Lenis smooth scroll (GSAP-integrated) ── */
+      var lenis = new Lenis();
+      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+      window.__lenis = lenis;
+
+      /* ── Nav scroll adaptation ── */
+      var landingNav = document.querySelector('.landing-nav');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > window.innerHeight * 0.75) {
+          landingNav.classList.add('landing-nav--scrolled');
+        } else {
+          landingNav.classList.remove('landing-nav--scrolled');
+        }
+      }, { passive: true });
+
+      /* ── Scroll reveal (IntersectionObserver) ── */
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(function (el) {
+        revealObserver.observe(el);
+      });
+
+      /* ── Featured products ── */
+      function handleFeaturedCartClick(btn) {
+        addToCart({
+          id:    btn.dataset.id,
+          name:  btn.dataset.name,
+          price: parseInt(btn.dataset.price, 10),
+          image: btn.dataset.image
+        }, 1);
+      }
+
+      fetch('./data/products.json')
+        .then(function (r) { return r.json(); })
+        .then(function (products) {
+          var featured = products.filter(function (p) { return p.featured; }).slice(0, 4);
+          var grid = document.getElementById('featured-grid');
+          if (!grid || !featured.length) return;
+
+          grid.innerHTML = featured.map(function (p) {
+            var addBtn = p.inStock
+              ? '<button class="btn-cart-icon" ' +
+                  'data-id="'    + p.id    + '" ' +
+                  'data-name="'  + p.name  + '" ' +
+                  'data-price="' + p.price + '" ' +
+                  'data-image="' + p.image + '" ' +
+                  'onclick="handleFeaturedCartClick(this)" ' +
+                  'aria-label="Add to cart">' +
+                  '<ion-icon name="bag-add-outline"></ion-icon>' +
+                '</button>'
+              : '<span class="sold-out-label">Sold Out</span>';
+
+            return '<div class="product-card reveal-on-scroll">' +
+              '<a href="product.html?id=' + p.id + '" class="product-card__img-wrap">' +
+                '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy" />' +
+                (!p.inStock ? '<span class="out-of-stock-badge">Sold Out</span>' : '') +
+              '</a>' +
+              '<div class="product-card__info">' +
+                '<span class="product-card__cat">' + p.categoryLabel + '</span>' +
+                '<h3 class="product-card__name"><a href="product.html?id=' + p.id + '">' + p.name + '</a></h3>' +
+                '<div class="product-card__footer">' +
+                  '<span class="product-card__price">' + formatKES(p.price) + '</span>' +
+                  addBtn +
+                '</div>' +
+              '</div>' +
+            '</div>';
+          }).join('');
+
+          /* Observe newly rendered cards */
+          grid.querySelectorAll('.reveal-on-scroll').forEach(function (el) {
+            revealObserver.observe(el);
+          });
+        })
+        .catch(function () { /* no-op: grid stays empty */ });
+    </script>
+  </body>
+</html>
