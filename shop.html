@@ -56,22 +56,21 @@
 
     <!-- Filter + search bar -->
     <div class="shop-controls">
-      <div class="shop-controls__inner">
+      <!-- Row 1: category pills (scrollable) -->
+      <div class="shop-controls__filters">
         <button class="filter-btn active" data-cat="all">All</button>
         <button class="filter-btn" data-cat="human-wigs">Human Wigs</button>
         <button class="filter-btn" data-cat="semi-human-wigs">Semi-Human</button>
         <button class="filter-btn" data-cat="synthetic-wigs">Synthetic</button>
         <button class="filter-btn" data-cat="braid-wigs">Braid Wigs</button>
         <button class="filter-btn" data-cat="extensions">Extensions</button>
-        <button class="filter-btn" data-cat="headbands">HeadBands</button>
+        <button class="filter-btn" data-cat="headbands">Headbands</button>
         <button class="filter-btn" data-cat="turbans">Turbans</button>
         <button class="filter-btn" data-cat="bonnets">Bonnets</button>
         <button class="filter-btn" data-cat="shower-caps">Shower Caps</button>
-        <div class="shop-controls__divider"></div>
-        <div class="search-wrap">
-          <ion-icon name="search-outline"></ion-icon>
-          <input type="text" id="shop-search" placeholder="Search…" autocomplete="off" />
-        </div>
+      </div>
+      <!-- Row 2: sort + search (always visible) -->
+      <div class="shop-controls__tools">
         <div class="sort-wrap">
           <select id="shop-sort" aria-label="Sort by">
             <option value="featured">Featured</option>
@@ -79,6 +78,10 @@
             <option value="price-desc">Price: High to Low</option>
             <option value="name-asc">Name: A–Z</option>
           </select>
+        </div>
+        <div class="search-wrap">
+          <ion-icon name="search-outline"></ion-icon>
+          <input type="text" id="shop-search" placeholder="Search…" autocomplete="off" />
         </div>
       </div>
     </div>

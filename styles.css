@@ -1324,7 +1324,6 @@ body.is-landing {
 
 /* ── Sort dropdown ── */
 .sort-wrap {
-  margin-left: auto;
   flex-shrink: 0;
 }
 .sort-wrap select {
