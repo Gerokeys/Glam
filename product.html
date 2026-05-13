@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product — Glam by Ivy</title>
+    <meta name="description" content="Explore premium wigs, extensions & hair accessories at Glam by Ivy. Same-day Nairobi delivery. Pay via M-Pesa." />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Product — Glam by Ivy" />
+    <meta property="og:description" content="Explore premium wigs, extensions & hair accessories at Glam by Ivy. Same-day Nairobi delivery. Pay via M-Pesa." />
+    <meta property="og:image" content="./assets/hero.jpg" />
+    <meta property="og:url" content="https://glambyivy.com/product.html" />
+    <meta property="og:site_name" content="Glam by Ivy" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="css/product.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -99,6 +106,39 @@
       </div>
     </div>
 
+    <!-- Care instructions -->
+    <section class="care-accordion">
+      <div class="care-accordion__inner">
+        <h2 class="care-accordion__heading">Wig Care Guide</h2>
+
+        <details class="care-item">
+          <summary>Washing</summary>
+          <p>Use a sulphate-free shampoo and cool or lukewarm water. Gently work the shampoo from roots to tips — never scrub or twist. Rinse thoroughly, then apply a lightweight leave-in conditioner. Air-dry on a wig stand; avoid wringing or tumble drying.</p>
+        </details>
+
+        <details class="care-item">
+          <summary>Styling & Heat</summary>
+          <p>Human hair wigs can be curled, straightened, or blow-dried just like natural hair — always apply a heat protectant spray before any tool. Keep heat below 230 °C. Synthetic wigs cannot be heat-styled unless labelled heat-resistant.</p>
+        </details>
+
+        <details class="care-item">
+          <summary>Storage</summary>
+          <p>Store on a wig stand or mannequin head to maintain shape. If folding for travel, use a silk or satin bag. Keep away from direct sunlight, excess humidity, and stacking pressure. Never store damp.</p>
+        </details>
+
+        <details class="care-item">
+          <summary>Detangling & Shedding</summary>
+          <p>Some shedding after washing is normal. Use a wide-tooth comb or your fingers, starting from the ends and working towards the roots. Detangle gently when the hair is slightly damp and conditioned — never force through knots dry.</p>
+        </details>
+
+        <details class="care-item">
+          <summary>Lace Care</summary>
+          <p>Remove adhesive residue from the lace using rubbing alcohol and a cotton ball — work gently to avoid stretching. Do not bleach lace at home as it weakens the knots. Replace lace-front tape or glue every 1–2 weeks for a fresh hold.</p>
+        </details>
+
+      </div>
+    </section>
+
     <!-- Related products -->
     <section class="related-section">
       <div class="related-section__inner">
@@ -151,9 +191,14 @@
       <ion-icon name="logo-whatsapp"></ion-icon>
     </a>
 
+    <button id="back-to-top" aria-label="Back to top">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
     <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/lenis-init.js"></script>
+    <script src="./js/back-to-top.js"></script>
     <script src="./js/product.js"></script>
   </body>
 </html>

@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glam by Ivy — By Women, For Women</title>
+    <meta name="description" content="Premium wigs, extensions & hair accessories crafted for the modern Kenyan woman. Shop online or visit us at HH Towers, Moi Avenue, Nairobi." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Glam by Ivy — By Women, For Women" />
+    <meta property="og:description" content="Premium wigs, extensions & hair accessories crafted for the modern Kenyan woman. Same-day Nairobi delivery. Pay via M-Pesa." />
+    <meta property="og:image" content="./assets/hero.jpg" />
+    <meta property="og:url" content="https://glambyivy.com" />
+    <meta property="og:site_name" content="Glam by Ivy" />
+    <link rel="preload" as="image" href="./assets/hero.jpg" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -73,7 +81,7 @@
             <div class="landing-nav__link"><a href="faq.html">FAQ</a></div>
           </div>
 
-          <!-- Right: cart + CTA -->
+          <!-- Right: cart + CTA + hamburger -->
           <div class="landing-nav__right">
             <div class="landing-nav__cart-wrap">
               <a href="cart.html" aria-label="Cart">
@@ -84,9 +92,26 @@
             <div class="landing-nav__cta-wrap">
               <a href="shop.html" class="nav-shop-btn shop-cta-link">Shop Now</a>
             </div>
+            <button class="landing-hamburger" aria-label="Open menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
           </div>
 
         </nav>
+
+        <!-- Mobile nav drawer (landing page) -->
+        <div class="landing-mobile-nav" aria-hidden="true">
+          <button class="landing-mobile-nav__close" aria-label="Close menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          <ul>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="cart.html">Cart</a></li>
+          </ul>
+        </div>
 
         <!-- Hero -->
         <div class="hero">
@@ -297,9 +322,15 @@
       <ion-icon name="logo-whatsapp"></ion-icon>
     </a>
 
+    <!-- Back to top -->
+    <button id="back-to-top" aria-label="Back to top">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
     <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="./js/cart.js"></script>
+    <script src="./js/back-to-top.js"></script>
     <script>
       /* ── GSAP intro animation ── */
       var tl = gsap.timeline({ delay: 0 });
@@ -371,6 +402,24 @@
         }
       }, { passive: true });
 
+      /* ── Landing mobile nav ── */
+      var landingHamburger = document.querySelector('.landing-hamburger');
+      var landingMobileNav = document.querySelector('.landing-mobile-nav');
+      var landingNavClose = document.querySelector('.landing-mobile-nav__close');
+
+      function toggleLandingNav(forceClose) {
+        var open = forceClose ? false : landingMobileNav.classList.toggle('open');
+        if (forceClose) landingMobileNav.classList.remove('open');
+        landingHamburger.classList.toggle('open', open);
+        landingHamburger.setAttribute('aria-expanded', open);
+        landingMobileNav.setAttribute('aria-hidden', !open);
+        document.body.style.overflow = open ? 'hidden' : '';
+        if (window.__lenis) { open ? window.__lenis.stop() : window.__lenis.start(); }
+      }
+
+      landingHamburger.addEventListener('click', function () { toggleLandingNav(); });
+      if (landingNavClose) landingNavClose.addEventListener('click', function () { toggleLandingNav(true); });
+
       /* ── Scroll reveal (IntersectionObserver) ── */
       var revealObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
@@ -415,6 +464,7 @@
                 '</button>'
               : '<span class="sold-out-label">Sold Out</span>';
 
+            var rating = (4 + (p.id % 5) * 0.2).toFixed(1);
             return '<div class="product-card reveal-on-scroll">' +
               '<a href="product.html?id=' + p.id + '" class="product-card__img-wrap">' +
                 '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy" />' +
@@ -422,6 +472,7 @@
               '</a>' +
               '<div class="product-card__info">' +
                 '<span class="product-card__cat">' + p.categoryLabel + '</span>' +
+                '<div class="product-card__stars" aria-label="' + rating + ' out of 5">★★★★★ <span class="stars-score">' + rating + '</span></div>' +
                 '<h3 class="product-card__name"><a href="product.html?id=' + p.id + '">' + p.name + '</a></h3>' +
                 '<div class="product-card__footer">' +
                   '<span class="product-card__price">' + formatKES(p.price) + '</span>' +

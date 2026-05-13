@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop — Glam by Ivy</title>
+    <meta name="description" content="Shop premium wigs, braids, extensions & hair accessories. Same-day delivery in Nairobi. Pay via M-Pesa." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shop — Glam by Ivy" />
+    <meta property="og:description" content="Shop premium wigs, braids, extensions & hair accessories. Same-day delivery in Nairobi. Pay via M-Pesa." />
+    <meta property="og:image" content="./assets/hero.jpg" />
+    <meta property="og:url" content="https://glambyivy.com/shop.html" />
+    <meta property="og:site_name" content="Glam by Ivy" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="css/shop.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -65,6 +72,14 @@
           <ion-icon name="search-outline"></ion-icon>
           <input type="text" id="shop-search" placeholder="Search…" autocomplete="off" />
         </div>
+        <div class="sort-wrap">
+          <select id="shop-sort" aria-label="Sort by">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A–Z</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -122,9 +137,15 @@
       <ion-icon name="logo-whatsapp"></ion-icon>
     </a>
 
+    <!-- Back to top -->
+    <button id="back-to-top" aria-label="Back to top">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
     <script src="https://unpkg.com/lenis@latest/dist/lenis.min.js"></script>
     <script src="./js/cart.js"></script>
     <script src="./js/lenis-init.js"></script>
+    <script src="./js/back-to-top.js"></script>
     <script src="./js/shop.js"></script>
   </body>
 </html>

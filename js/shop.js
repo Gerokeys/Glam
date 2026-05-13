@@ -5,6 +5,7 @@
 var allProducts = [];
 var activeCategory = 'all';
 var searchQuery = '';
+var sortOrder = 'featured';
 
 function loadProducts() {
   fetch('./data/products.json')
@@ -26,7 +27,7 @@ function loadProducts() {
 }
 
 function filterProducts() {
-  return allProducts.filter(function(p) {
+  var filtered = allProducts.filter(function(p) {
     var matchCat = activeCategory === 'all' || p.category === activeCategory;
     var q = searchQuery.toLowerCase().trim();
     var matchSearch = !q ||
@@ -34,11 +35,16 @@ function filterProducts() {
       p.categoryLabel.toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
+  if (sortOrder === 'price-asc') return filtered.slice().sort(function(a, b) { return a.price - b.price; });
+  if (sortOrder === 'price-desc') return filtered.slice().sort(function(a, b) { return b.price - a.price; });
+  if (sortOrder === 'name-asc') return filtered.slice().sort(function(a, b) { return a.name.localeCompare(b.name); });
+  return filtered;
 }
 
 function productCardHTML(p) {
   var safeName = p.name.replace(/'/g, '&#39;').replace(/"/g, '&quot;');
   var safeImage = p.image.replace(/'/g, '&#39;');
+  var rating = (4 + (p.id % 5) * 0.2).toFixed(1);
   return '<div class="product-card">' +
     '<a href="product.html?id=' + p.id + '" class="product-card__img-wrap">' +
       '<img src="' + p.image + '" alt="' + safeName + '" loading="lazy" />' +
@@ -46,6 +52,7 @@ function productCardHTML(p) {
     '</a>' +
     '<div class="product-card__info">' +
       '<span class="product-card__cat">' + p.categoryLabel + '</span>' +
+      '<div class="product-card__stars" aria-label="' + rating + ' out of 5">★★★★★ <span class="stars-score">' + rating + '</span></div>' +
       '<h3 class="product-card__name"><a href="product.html?id=' + p.id + '">' + p.name + '</a></h3>' +
       '<div class="product-card__footer">' +
         '<span class="product-card__price">' + formatKES(p.price) + '</span>' +
@@ -94,4 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.filter-btn').forEach(function(btn) {
     btn.addEventListener('click', function() { setCategory(btn.dataset.cat); });
   });
+
+  var sortSelect = document.getElementById('shop-sort');
+  if (sortSelect) {
+    sortSelect.addEventListener('change', function() {
+      sortOrder = sortSelect.value;
+      renderProducts();
+    });
+  }
 });
